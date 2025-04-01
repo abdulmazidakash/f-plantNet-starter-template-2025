@@ -49,10 +49,11 @@ const AddPlant = () => {
       await axiosSecure.post(`/plants`,  plantData)
       toast.success('data save to successfully')
     }catch(err){
+      toast.error(err.message)
       console.log(err);
     }finally{
       setLoading(false);
-    }
+    } 
   }
   return (
     <div>
